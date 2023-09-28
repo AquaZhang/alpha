@@ -14,7 +14,7 @@ func Setup() *gin.Engine {
 	config.AllowMethods = []string{"GET", "POST", "PUT", "DELETE"}
 	r.Use(cors.New(config))
 	r.GET("/api/v1/resource/:type", handlers.GetResource)
-	r.POST("/api/v1/resource", handlers.CreateResource)
+	r.POST("/api/v1/resource/:type", handlers.CreateResource)
 	r.PUT("/api/v1/resource/:id", handlers.UpdateResource)
 	r.DELETE("/api/v1/resource/:id", handlers.DeleteResource)
 

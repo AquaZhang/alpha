@@ -10,7 +10,6 @@ import (
 func GetAllToDoItems(c *gin.Context) {
 	db := DB
 
-	db.AutoMigrate(models.ToDoItem{})
 	dao := models.NewToDoItemDAO(db)
 	svc := services.NewToDoItemService(dao)
 	items, _ := svc.GetAllToDoItems()

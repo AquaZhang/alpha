@@ -6,7 +6,7 @@ type ToDoItem struct {
 	ID     string `json:"id"`
 	Label  string `json:"label"`
 	Detail string `json:"detail"`
-	IsDone bool   `json:"done"`
+	Done   bool   `json:"done"`
 }
 type ToDoItemDAO struct {
 	db *gorm.DB
