@@ -12,7 +12,7 @@ import (
 var DB *gorm.DB
 
 func Setup() {
-	dsn := "root:001000@tcp(127.0.0.1:3306)/test?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:001000@tcp(127.0.0.1:3306)/alpha?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		fmt.Println("数据库连接错误：%v", err)
@@ -25,6 +25,8 @@ func GetResource(c *gin.Context) {
 	switch getType {
 	case "getAllToDoItems":
 		GetAllToDoItems(c)
+	case "getToDoItem":
+		GetToDoItemById(c)
 	}
 }
 func CreateResource(c *gin.Context) {

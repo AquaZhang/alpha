@@ -27,7 +27,7 @@ func (s *ToDoItemService) CreateToDoItem(item *ToDoItem) error {
 	return nil
 }
 
-func (s *ToDoItemService) GetToDoItemByID(id int) (*ToDoItem, error) {
+func (s *ToDoItemService) GetToDoItemByID(id string) (*ToDoItem, error) {
 	// 执行业务逻辑，获取待办事项
 	// ...
 	// 使用 s.dao 执行数据库操作

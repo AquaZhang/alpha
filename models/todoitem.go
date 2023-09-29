@@ -27,7 +27,7 @@ func (dao *ToDoItemDAO) CreateToDoItem(item *ToDoItem) error {
 	return dao.db.Create(item).Error
 }
 
-func (dao *ToDoItemDAO) GetToDoItemByID(id int) (*ToDoItem, error) {
+func (dao *ToDoItemDAO) GetToDoItemByID(id string) (*ToDoItem, error) {
 	var item ToDoItem
 	err := dao.db.First(&item, id).Error
 	return &item, err
